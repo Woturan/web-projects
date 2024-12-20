@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>calculadora</title>
+		<style type="text/css">
+		a {
+			color: #00FE01;
+		}
+			body {
+			color: #FFFEFE;
+      font-family:"Brush Script MT", cursive;
+		}
+		.form {
+			color: #FFFEFE;
+		}
+		.ariel {
+			color:#00FE01;
+		}
+		.alefe {
+		color: #FE0001;
+	 }
+	 .adriel {
+		 color: #0000FF;
+	 }
+	 #first {
+		background-color: #010100;
+	 }
+	 #second {
+		background-color: #010100;
+	 }
+	 #sum {
+		background-color: #0000FF;
+	 }
+	 #sub {
+		background-color: #FEFE00;
+	 }
+	 #mut {
+		background-color: #DE0175;
+	 }
+	 #div {
+		background-color: #00FE01;
+	 }
+	 #plano-de-fundo {
+		 background-color: #010100;
+	 }
+	 #nome-do-site {
+		background-color: #FE0001;
+	 }
+	 #ariel {
+		 background-color: #00FE01;
+	 }
+	 #alefe {
+		background-color: #FE0001;
+	 }
+	 #adriel {
+		background-color: #0000FF;
+	 }
+	 #two-adriel {
+		border: 10px solid #0000FF;
+		font-size: 5dvw;
+	 }
+	 /*
+	 font-weight:
+	 bold: deixa as coisas em negrito(e pode definir de 100 à 900).
+	 normal: deixa a palavra normal.
+	 
+	 font-style: 
+	 italic: deixa as palavras "deitadas".
+
+	 text-decoration:
+	 underline: cria uma linha debaixo da palavra.
+	 overline: cria uma linha acima da palavra.
+	 linethrough: cria uma linha no meio da palavra.
+	 */
+		</style>
+	</head>
+	<body id="plano-de-fundo">
+		<a href="index.html">Volta ao início</a> / <a href="pixel-art.html">Pixei arte</a> / <a href="table.html">Tabela</a>
+		<hr>
+		<h1>Minha calculadora</h1>
+		<hr>
+		<div>
+			<label for="first">Primeiro número</label>
+			<br>
+			<input class="form"type="text"id="first">
+		</div>
+		<div>
+			<label for="second">Segundo número</label><br>
+			<input class="form"type="text"id="second">
+		</div>
+		<hr>
+		<div>
+			<button class="form"id="sum">Somar</button>
+			<button class="form"id="sub">Subtrair</button>
+			<button class="form"id="mut">Multiplicar</button>
+			<button class="form"id="div">Dividir</button>
+			<hr>
+		</div>
+		<br>
+		<div>
+			<span id="result"></span>
+		</div>
+		<script>
+			var firstNumberInput = document.getElementById( "first" );
+			var secondNumberInput = document.getElementById( "second" );
+
+			document.getElementById( "sum" ).addEventListener( "click", () => {
+				let { firstNumber, secondNumber } = getValues();
+				let result = firstNumber + secondNumber;
+				printResult( result );
+			} );
+
+			document.getElementById( "sub" ).addEventListener( "click", () => {
+				let { firstNumber, secondNumber } = getValues();
+				let result = firstNumber - secondNumber;
+				printResult( result );
+			} );
+
+			document.getElementById( "mut" ).addEventListener( "click", () => {
+				let { firstNumber, secondNumber } = getValues();
+				let result = firstNumber * secondNumber;
+				printResult( result );
+			} );
+
+			document.getElementById( "div" ).addEventListener( "click", () => {
+				let { firstNumber, secondNumber } = getValues();
+				let result = firstNumber / secondNumber;
+				printResult( result );
+			} );
+
+			function getValues () {
+				let firstNumber = parseFloat( firstNumberInput.value );
+				let secondNumber = parseFloat( secondNumberInput.value );
+				return { firstNumber, secondNumber };
+			}
+
+			function printResult ( result ) {
+				document.getElementById( "result" ).innerHTML = "O resultado é: " + result;
+			}
+		</script>
+	</body>
+</html>
